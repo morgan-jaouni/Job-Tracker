@@ -15,7 +15,7 @@ export default class CreateJob extends Component {
             job_company:'',
             job_title:'',
             job_date:'',
-            job_reponse:'',
+            job_reponse:'No',
         }
     }
 
@@ -61,23 +61,39 @@ export default class CreateJob extends Component {
             <div>
                 <p>Create New Job</p>
                 <form onSubmit={this.onSubmit}>
+                <div>
                     <label>Company:</label>
-                    <input type="text" value={this.state.job_company} onChange={this.onChangeJobCompany}></input>
-                </form>
-                <form onSubmit={this.onSubmit}>
+                    <input 
+                    type="text" 
+                    value={this.state.job_company || ''} 
+                    onChange={this.onChangeJobCompany}></input>
+                </div>
+                <div>
                     <label>Title:</label>
-                    <input type="text" value={this.state.job_title} onChange={this.onChangeJobCompany}></input>
-                </form>
-                <form onSubmit={this.onSubmit}>
+                    <input 
+                    type="text" 
+                    value={this.state.job_title || ''} 
+                    onChange={this.onChangeJobTitle}></input>
+                </div>
+                <div>
                     <label>Date:</label>
-                    <input type="text" value={this.state.job_date} onChange={this.onChangeJobCompany}></input>
-                </form>
-                <form onSubmit={this.onSubmit}>
+                    <input 
+                    type="text" 
+                    value={this.state.job_date} 
+                    onChange={this.onChangeJobDate}></input>
+                </div>
+                <div>
                     <label>Response:</label>
-                    <input type="text" value={this.state.job_response} onChange={this.onChangeJobCompany}></input>
-                </form>
-                <input type="submit" value="Create Job" className="btn btn-primary" />
-
+                    <input 
+                     type="text"
+                     value={this.state.job_response || ''} 
+                     onChange={this.onChangeJobResponse}></input>
+                </div>
+                <div>
+                <button type="submit" 
+                className="btn btn-primary">Create Job</button>
+                </div>
+            </form>
             </div>
 
         )

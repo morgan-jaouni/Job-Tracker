@@ -12,7 +12,7 @@ class App extends Component {
   return (
     <Router>
     <div className="App">
-      <h1 class="mt-5">Job-Hunter</h1>
+      <h1 className="mt-5">Job-Hunter</h1>
 
       <nav>
       <ul>
