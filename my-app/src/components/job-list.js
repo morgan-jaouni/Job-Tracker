@@ -3,16 +3,16 @@ import { Link } from 'react-router-dom';
 import axios from 'axios';
 
 const Job = props => {
-    <tr>
-        <td>{props.job.job_company}</td>
-        <td>{props.job.job_title}</td>
-        <td>{props.job.job_date}</td>
-        <td>{props.job.job_response}</td>
-        <td>
+    <ul>
+        <li>{props.job.job_company}</li>
+        <li>{props.job.job_title}</li>
+        <li>{props.job.job_date}</li>
+        <li>{props.job.job_response}</li>
+        <li>
             <Link to={"/edit/"+props.job._id}> Edit </Link>
-        </td>
+        </li>
 
-    </tr>
+    </ul>
 }
 
 export default class JobList extends Component {
@@ -21,14 +21,15 @@ export default class JobList extends Component {
         this.state = {jobs: []};
     }
     componentDidMount() {
-        axios.get('http://localhost:4000/jobs/')
+        axios.get('http://localhost:4000/jobs')
             .then(res => {
                 this.setState({ jobs: res.data });
             })
-            .catch(function (error){
-                console.log(error);
+            .catch(function (err){
+                console.log(err);
             })
     }
+    
 
     jobsList() {
         return this.state.jobs.map(function(currentJob, i) {
@@ -39,7 +40,11 @@ export default class JobList extends Component {
         return (
             <div>
                 <h2>Job-List</h2>
+                <ul>
+                  <li>
                     { this.jobsList() }
+                  </li>
+                </ul>
             </div>
 
         )
