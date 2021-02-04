@@ -32,6 +32,13 @@ jobRoutes.route('/').get(function (req,res) {
     });
 });
 
+jobRoutes.route('/:id').get(function(req,res) {
+    let id = req.params.id;
+    Job.findById(id, function(err, job) {
+        res.json(job);
+    });
+});
+
 
 app.listen(PORT, function() {
     console.log("Server running on Port: " + PORT );
