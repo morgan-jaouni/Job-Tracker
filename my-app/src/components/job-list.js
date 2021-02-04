@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios';
+import '../App.css';
+
 
 const Job = (props) => (
     <ul>
@@ -34,7 +36,9 @@ export default class JobList extends Component {
         return (
             <div>
                 <h2>Job-List</h2>
+                <div className="job-list">
                     {this.jobsList()}
+                </div>
             </div>
 
         )
