@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import axios from 'axios';
 
 export default class CreateJob extends Component {
 
@@ -48,13 +49,23 @@ export default class CreateJob extends Component {
         console.log(`Date Applied: ${this.state.job_date}`);
         console.log(`Response: ${this.state.job_response}`);
 
+    const newJob = {
+        job_company : this.state.job_company,
+        job_title : this.state.job_title,
+        job_date : this.state.job_date,
+        job_response : this.state.job_response
+    };
+
+    axios.post('http://localhost:4000/jobs/add', newJob)
+        .then(res => console.log(res.data)); 
+
         this.setState({
             job_company:'',
             job_title:'',
             job_date:'',
             job_reponse:''
         });
-        }
+    }
     
     render() {
         return (
