@@ -33,12 +33,30 @@ export default class JobList extends Component {
         })
     }
     render() {
+
+        const jobsList = this.state.jobs.map(job => (
+            <div className="jobs-list" key={job._id}>
+                <p>{job.job_company}</p>
+                <p>{job.job_title}</p>
+                <p>{job.job_date}</p>
+                <p>{job.job_response}</p>
+            </div>
+        ))
+
         return (
             <div>
-                <h2>Job-List</h2>
-                <div className="job-list">
-                    {this.jobsList()}
-                </div>
+                <h2>Applied To:</h2>
+                <table className="table table-striped" style={{ marginTop: 20 }}>
+                    <thead>
+                        <tr>
+                            <th>Company</th>
+                            <th>Title</th>
+                            <th>Date</th>
+                            <th>Response</th>
+                        </tr>
+                    </thead>
+                        { jobsList }
+                </table>
             </div>
 
         )

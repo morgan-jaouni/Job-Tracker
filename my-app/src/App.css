@@ -37,6 +37,10 @@
   }
 }
 
-.job-list {
+.jobs-list {
+  border: 2px solid black;
+}
+
+p {
   display: inline-block;
 }
