@@ -76,6 +76,8 @@ export default class CreateJob extends Component {
                     <label>Response:</label>
                     <input type="text" value={this.state.job_response} onChange={this.onChangeJobCompany}></input>
                 </form>
+                <input type="submit" value="Create Job" className="btn btn-primary" />
+
             </div>
 
         )
