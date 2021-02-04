@@ -4,7 +4,6 @@ const app = express();
 const bodyParser = require('body-parser');
 const cors = require('cors');
 const mongoose = require('mongoose');
-const jobs = require('./models/Job');
 const Job = require('./models/Job');
 const jobRoutes = express.Router();
 const PORT = 4000;
@@ -21,12 +20,12 @@ connection.once('open', function() {
 
 //Displays all jobs - GET Request
 jobRoutes.route('/').get(function (req,res) {
-    jobs.find(function(err, jobs) {
+    Job.find(function(err, job) {
         
         if (err) {
             console.log(err);
         } else {
-            res.json(jobs);
+            res.json(job);
         }
         
     });

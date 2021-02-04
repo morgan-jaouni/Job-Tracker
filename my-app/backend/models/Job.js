@@ -9,7 +9,7 @@ let Jobs = new Schema({
     job_title: {
         type: String
     },
-    job_data: {
+    job_date: {
         type: String
     },
     job_response: {

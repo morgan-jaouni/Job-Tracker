@@ -1,20 +1,14 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
 import axios from 'axios';
 
-const Job = props => {
+const Job = (props) => (
     <ul>
         <li>{props.job.job_company}</li>
         <li>{props.job.job_title}</li>
-        <li>{props.job.job_date}</li>
+        <li>{props.job.job_time}</li>
         <li>{props.job.job_response}</li>
-        <li>
-            <Link to={"/edit/"+props.job._id}> Edit </Link>
-        </li>
-
     </ul>
-}
-
+)
 export default class JobList extends Component {
     constructor(props) {
         super(props);
@@ -42,7 +36,7 @@ export default class JobList extends Component {
                 <h2>Job-List</h2>
                 <ul>
                   <li>
-                    { this.jobsList() }
+                    {this.jobsList()}
                   </li>
                 </ul>
             </div>
