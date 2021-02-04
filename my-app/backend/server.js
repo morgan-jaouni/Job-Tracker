@@ -44,11 +44,11 @@ jobRoutes.route('/:id').get(function(req,res) {
 jobRoutes.route('/add').post(function(req,res) {
     let job = new Job(req.body);
     job.save()
-    .then(todo => {
-        res.status(200).json({'todo': 'todo added successfully!'})
+    .then(job => {
+        res.status(200).json({'job': 'job added successfully!'})
     })
     .catch(err => {
-        res.status(400).send('adding new todo failed');
+        res.status(400).send('adding new job failed');
     })
 });
 
