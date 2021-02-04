@@ -10,7 +10,6 @@ const jobRoutes = express.Router();
 const PORT = 4000;
 
 app.use(cors());
-app.use('/jobs', jobRoutes);
 app.use(bodyParser.json());
 
 mongoose.connect('mongodb://127.0.0.1:27017/job-list', { useNewUrlParser: true, useUnifiedTopology: true });
@@ -59,14 +58,22 @@ jobRoutes.route('/update/:id').post(function(req,res) {
 
     Job.findById(req.params.id, function(err,job) {
 
-        job.job_company = req.body.
+        job.job_company = req.body.job_company;
+        job.job_title = req.body.job_title;
+        job.job_date = req.body.job_date;
+        job.job_response = req.body.job_response;
 
-    })
+        job.save().then(job => {
+            res.json('Job Updated!')
+        })
+    .catch(err => {
+        res.status(400).send('update not possible!');
+    });
+  });
+});
 
 
-})
-
-
+app.use('/jobs', jobRoutes);
 
 
 app.listen(PORT, function() {
