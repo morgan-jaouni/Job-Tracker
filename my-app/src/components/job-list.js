@@ -5,7 +5,7 @@ const Job = (props) => (
     <ul>
         <li>{props.job.job_company}</li>
         <li>{props.job.job_title}</li>
-        <li>{props.job.job_time}</li>
+        <li>{props.job.job_date}</li>
         <li>{props.job.job_response}</li>
     </ul>
 )
@@ -34,11 +34,7 @@ export default class JobList extends Component {
         return (
             <div>
                 <h2>Job-List</h2>
-                <ul>
-                  <li>
                     {this.jobsList()}
-                  </li>
-                </ul>
             </div>
 
         )
