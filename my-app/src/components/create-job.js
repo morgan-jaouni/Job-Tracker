@@ -65,14 +65,14 @@ export default class CreateJob extends Component {
                     <label>Company:</label>
                     <input 
                     type="text" 
-                    value={this.state.job_company || ''} 
+                    value={this.state.job_company} 
                     onChange={this.onChangeJobCompany}></input>
                 </div>
                 <div>
                     <label>Title:</label>
                     <input 
                     type="text" 
-                    value={this.state.job_title || ''} 
+                    value={this.state.job_title} 
                     onChange={this.onChangeJobTitle}></input>
                 </div>
                 <div>
