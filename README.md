@@ -1,5 +1,7 @@
 # Job-Tracker
 
+#### Instead of using Excel to log my job hunt... I created my own application with a MERN Stack! 
+
 ## Technologies Used:
 
 * MongoDB
@@ -7,7 +9,7 @@
 * React
 * Node
 
-## Instead of using Excel to log my job hunt... I created my own application with a MERN Stack! 
+
 
 ## Features:
 * Create a job with the company name, title, date, & response
