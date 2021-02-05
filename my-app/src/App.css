@@ -39,8 +39,9 @@
 
 .jobs-list {
   border: 2px solid black;
+  display: block;
 }
 
-p {
-  display: inline-block;
+.p-tags {
+  display: inline;
 }

@@ -1,15 +1,19 @@
 import React, { Component } from 'react';
 import axios from 'axios';
+import { Link } from 'react-router-dom';
 import '../App.css';
 
 
 const Job = (props) => (
-    <ul>
-        <li>{props.job.job_company}</li>
-        <li>{props.job.job_title}</li>
-        <li>{props.job.job_date}</li>
-        <li>{props.job.job_response}</li>
-    </ul>
+    <tr>
+        <td>{props.job.job_company}</td>
+        <td>{props.job.job_title}</td>
+        <td>{props.job.job_date}</td>
+        <td>{props.job.job_response}</td>
+        <td>
+            <Link to={"/edit/"+props.job._id}>Edit</Link>
+        </td>
+    </tr>
 )
 export default class JobList extends Component {
     constructor(props) {
@@ -34,14 +38,9 @@ export default class JobList extends Component {
     }
     render() {
 
-        const jobsList = this.state.jobs.map(job => (
-            <div className="jobs-list" key={job._id}>
-                <p>{job.job_company}</p>
-                <p>{job.job_title}</p>
-                <p>{job.job_date}</p>
-                <p>{job.job_response}</p>
-            </div>
-        ))
+        const jobsList = this.state.jobs.map(function(currentJob,i) {
+            return <Job job={currentJob} key={i} />;
+        });
 
         return (
             <div>
