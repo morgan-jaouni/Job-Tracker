@@ -46,9 +46,9 @@ return (
              <nav>
              <h1 className="mt-3">Believer</h1>
                 <ul>
-                     <li><Link to ="/">Jobs</Link></li>
-                     <li> <Link to ="/create">Create Job</Link></li>
                      <li><Link to ="/edit/:id">Edit Job</Link></li>
+                     <li> <Link to ="/create">Create Job</Link></li>
+                     <li><Link to ="/">Jobs</Link></li>
                  </ul>
              </nav>
 

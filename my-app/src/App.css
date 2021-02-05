@@ -53,6 +53,7 @@ ul {
 li {
   display: inline;
   float: right;
+  padding: 8px;
 }
 h2 {
   font-size: 12px;
