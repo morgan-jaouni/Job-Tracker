@@ -43,15 +43,17 @@ render() {
 
 return (
         <div>
+            <div>
              <nav>
-             <h1 className="mt-3">Believer</h1>
+             <h1>Believer</h1>
                 <ul>
                      <li><Link to ="/edit/:id">Edit Job</Link></li>
                      <li> <Link to ="/create">Create Job</Link></li>
                      <li><Link to ="/">Jobs</Link></li>
                  </ul>
              </nav>
-
+             </div>
+            <div className="job-container">
                 <table className="table table-striped" style={{ marginTop: 20 }}>
                     <thead>
                         <tr>
@@ -63,6 +65,7 @@ return (
                     </thead>
                         { jobsList }
                 </table>
+            </div>
             </div>
 
         )
