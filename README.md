@@ -6,7 +6,7 @@
 
 * MongoDB
 * Express
-* React
+* React.js
 * Node
 
 
