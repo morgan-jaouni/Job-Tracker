@@ -45,3 +45,15 @@
 .p-tags {
   display: inline;
 }
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+li {
+  display: inline;
+  float: right;
+}
+h2 {
+  font-size: 12px;
+}

@@ -3,7 +3,6 @@ import axios from 'axios';
 import { Link } from 'react-router-dom';
 import '../App.css';
 
-
 const Job = (props) => (
     <tr>
         <td>{props.job.job_company}</td>
@@ -15,12 +14,14 @@ const Job = (props) => (
         </td>
     </tr>
 )
+
 export default class JobList extends Component {
     constructor(props) {
         super(props);
         this.state = {jobs: []};
     }
-    componentDidMount() {
+
+componentDidMount() {
         axios.get('http://localhost:4000/jobs')
             .then(res => {
                 this.setState({ jobs: res.data });
@@ -30,21 +31,27 @@ export default class JobList extends Component {
             })
     }
     
-
-    jobsList() {
+jobsList() {
         return this.state.jobs.map(function(currentJob, i) {
             return <Job job={currentJob} key = {i} />;
         })
     }
-    render() {
-
+render() {
         const jobsList = this.state.jobs.map(function(currentJob,i) {
             return <Job job={currentJob} key={i} />;
-        });
+    });
 
-        return (
-            <div>
-                <h2>Applied To:</h2>
+return (
+        <div>
+             <nav>
+             <h1 className="mt-3">Believer</h1>
+                <ul>
+                     <li><Link to ="/">Jobs</Link></li>
+                     <li> <Link to ="/create">Create Job</Link></li>
+                     <li><Link to ="/edit/:id">Edit Job</Link></li>
+                 </ul>
+             </nav>
+
                 <table className="table table-striped" style={{ marginTop: 20 }}>
                     <thead>
                         <tr>
