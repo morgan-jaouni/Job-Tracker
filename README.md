@@ -1,4 +1,4 @@
-# Job-Tracker (IN-progress..)
+# Job-Tracker (IN-progress...)
 
 #### Instead of using Excel to log my job hunt... I created my own application with a MERN Stack! 
 
